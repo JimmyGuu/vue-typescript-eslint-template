@@ -1,0 +1,252 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "微软雅黑", "Microsoft YaHei", Arial, sans-serif;
+  font-size: 14px;
+  // mobile project with use of postcss-pxtorem
+  // npm i postcss postcss-pxtorem -D
+  // 1. create file .postcssrc.js and enter the code
+  // module.exports = {
+  //  plugins: {
+  //    "postcss-pxtorem": {
+  //      rootValue: 100,
+  //      propList: ["*"],
+  //    },
+  //  },
+  //};
+  // 2. set font-size base on viewport
+  // font-size: calc((100vw) / 3.75);
+
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $color-text;
+  text-align: left;
+  background-color: $color-white;
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 100vh;
+}
+
+small {
+  font-size: 80%;
+}
+
+article,
+aside,
+dialog,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+$selected-bg: $color-primary !default;
+$selected-color: $color-white !default;
+
+::-moz-selection {
+  background: $selected-bg;
+  color: $selected-color;
+}
+
+::-webkit-selection {
+  background: $selected-bg;
+  color: $selected-color;
+}
+
+::selection {
+  background: $selected-bg;
+  color: $selected-color;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-image: none;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background-image: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.2)
+  );
+  transition: all 0.2s;
+  border-radius: 0.25rem;
+}
+
+[tabindex="-1"]:focus {
+  outline: 0 !important;
+}
+
+abbr[title],
+abbr[data-original-title] {
+  // 4
+  text-decoration: underline; // 2
+  text-decoration: underline dotted; // 2
+  cursor: help; // 3
+  border-bottom: 0; // 1
+}
+
+acronym {
+  border: 0;
+}
+
+address {
+  font-style: normal;
+  line-height: inherit;
+}
+
+dfn {
+  font-style: italic;
+}
+
+caption,
+cite,
+code,
+em,
+i,
+strong,
+th,
+var,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  font-style: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+a {
+  color: $color-primary;
+  text-decoration: none;
+  background-color: transparent; // Remove the gray background on active links in IE 10.
+  -webkit-text-decoration-skip: objects; // Remove gaps in links underline in iOS 8+ and Safari 8+.
+
+  &:hover {
+    color: $color-primary;
+    text-decoration: none;
+  }
+}
+
+img {
+  vertical-align: middle;
+  border-style: none; // Remove the border on images inside links in IE 10-.
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse; // Prevent double borders
+}
+
+input,
+button,
+select,
+optgroup,
+textarea {
+  margin: 0; // Remove the margin in Firefox and Safari
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+// 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+//    controls in Android 4.
+// 2. Correct the inability to style clickable types in iOS and Safari.
+button,
+html [type="button"], // 1
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; // 2
+}
+
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
+  // Remove the default appearance of temporal inputs to avoid a Mobile Safari
+  // bug where setting a custom line-height prevents text from being vertically
+  // centered within the input.
+  -webkit-appearance: listbox;
+}
+
+progress {
+  vertical-align: baseline; // Add the correct vertical alignment in Chrome, Firefox, and Opera.
+}
+
+[type="search"] {
+  // This overrides the extra rounded corners on search inputs in iOS so that our
+  // `.form-control` class can properly style them. Note that this cannot simply
+  // be added to `.form-control` as it's not specific enough.
+  outline-offset: -2px; // 2. Correct the outline style in Safari.
+  -webkit-appearance: none;
+}
+
+// 1. Correct the inability to style clickable types in iOS and Safari.
+// 2. Change font properties to `inherit` in Safari.
+::-webkit-file-upload-button {
+  font: inherit; // 2
+  -webkit-appearance: button; // 1
+}
+
+summary {
+  display: list-item; // Add the correct display in all browsers
+  cursor: pointer;
+}

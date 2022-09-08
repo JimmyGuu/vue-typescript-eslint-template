@@ -1,0 +1,30 @@
+//** usual-gray
+$color-black:            #000 !default;
+$color-white:            #fff !default;
+$color-gray-darker:      lighten($color-black, 13.5%) !default; // #222
+$color-gray-dark:        lighten($color-black, 20%) !default;   // #333
+$color-gray:             lighten($color-black, 33.5%) !default; // #555
+$color-gray-light:       lighten($color-black, 46.7%) !default; // #777
+$color-gray-lighter:     lighten($color-black, 93.5%) !default; // #eee
+
+//** NutUI theme
+$primary-color:          #0057fe !default;
+
+//** theme colors
+$color-primary:          #0057fe !default;
+$color-secondary:        #192740 !default;
+
+$color-success:          #52c41a !default;
+$color-danger:           #f03738 !default;
+$color-warning:          #ffc15e !default;
+$color-info:             #5ca0d3 !default;
+$color-default:          $color-gray-dark !default;
+$color-disabled:         #CACACA;
+
+$color-text:             #282828 !default;
+
+$color-sub:              #757E8C;
+
+$font-small: 12px;
+$font-large: 16px;
+$font-normal: 14px;
